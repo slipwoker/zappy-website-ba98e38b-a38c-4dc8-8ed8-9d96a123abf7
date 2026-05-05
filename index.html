@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>חבילת השתלת שיער בחו&quot;ל עם חופשה — Thai Hair Go</title>
+    <meta name="description" content="Thai Hair Go is a unique medical tourism company that combines professional hair transplant procedures in Thailand with a luxurious vacation experience. The bra">
+    <meta name="keywords" content="חבילת השתלת שיער בחו"ל עם חופשה, מחיר השתלת שיער בתאילנד, פתרון לנשירת שיער בגברים בחו"ל">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: 'ba98e38b-a38c-4dc8-8ed8-9d96a123abf7',
+    apiUrl: 'https://api.zappy5.com/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+    <meta property="og:title" content="חבילת השתלת שיער בחו&quot;ל עם חופשה — Thai Hair Go">
+    <meta property="og:description" content="Thai Hair Go is a unique medical tourism company that combines professional hair transplant procedures in Thailand with a luxurious vacation experience. The bra">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="חבילת השתלת שיער בחו&quot;ל עם חופשה — Thai Hair Go">
+    <meta name="twitter:description" content="Thai Hair Go is a unique medical tourism company that combines professional hair transplant procedures in Thailand with a luxurious vacation experience. The bra">
+    <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style id="zappy-dropdown-submenu-styles">
+      /* ========== DESKTOP DROPDOWN SUBMENU STYLES ========== */
+      /* Base styles for dropdown submenus - parent must be positioned */
+      .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { position: relative; }
+      /* Submenu base - hidden by default */
+      .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { display: block !important; position: absolute !important; top: 100%; left: 0; min-width: 220px; background: white; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.15); padding: 8px 0; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; z-index: 1000; list-style: none; pointer-events: none; }
+      /* CRITICAL: Desktop hover styles to show dropdown */
+      .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Submenu item styling */
+      .sub-menu li { list-style: none; margin: 0; padding: 0; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+      [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 10px !important; padding-right: 28px !important; }
+      .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+      .sub-menu a:hover { background-color: #f5f5f5; }
+      /* RTL (Hebrew/Arabic) dropdown positioning */
+      [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Desktop: show submenu on Menu Group hover */
+      li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
+      /* Menu Group title styling */
+      .nav-menu > li > .menu-group-title, #navMenu > li > .menu-group-title { display: inline-block; padding: 0.5rem 1rem; cursor: default; user-select: none; }
+      
+      /* ========== MOBILE SUBMENU STYLES ========== */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
+        .navbar .sub-menu.mobile-expanded, .nav-menu .sub-menu.mobile-expanded, #navMenu .sub-menu.mobile-expanded { max-height: none !important; overflow-y: visible !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
+        /* Disable hover behavior on mobile */
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) { display: flex !important; flex-wrap: wrap !important; align-items: center !important; position: relative !important; min-height: 44px !important; }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a { flex: 1 !important; min-width: 0 !important; }
+        .nav-menu li:has(.sub-menu) > .menu-group-title, nav li:has(.sub-menu) > .menu-group-title, .navbar li:has(.sub-menu) > .menu-group-title, #navMenu li:has(.sub-menu) > .menu-group-title { flex: 1 !important; min-width: 0 !important; padding: 0 !important; line-height: inherit !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu { flex-basis: 100% !important; width: 100% !important; }
+        .nav-menu li:has(.sub-menu) > a [class*="chevron"], .nav-menu li:has(.sub-menu) > a [class*="arrow"], .nav-menu li:has(.sub-menu) > a .fa-chevron-down, .nav-menu li:has(.sub-menu) > a .fa-angle-down, nav li:has(.sub-menu) > a [class*="chevron"], nav li:has(.sub-menu) > a [class*="arrow"], #navMenu li:has(.sub-menu) > a [class*="chevron"], #navMenu li:has(.sub-menu) > a [class*="arrow"] { display: none !important; visibility: hidden !important; }
+        .mobile-submenu-toggle { display: flex !important; align-items: center !important; justify-content: center !important; width: 44px !important; height: auto !important; background: transparent !important; border: none !important; cursor: pointer !important; color: var(--text-dark) !important; position: static !important; flex-shrink: 0 !important; align-self: stretch !important; z-index: 2 !important; padding: 0 !important; margin: 0 !important; }
+        .mobile-submenu-toggle::after { content: '' !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important; }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; color: var(--text-dark) !important; white-space: normal !important; }
+        .sub-menu .zappy-nav-child > a { padding-left: 28px !important; font-size: 0.9em !important; opacity: 0.85 !important; }
+        [dir="rtl"] .sub-menu .zappy-nav-child > a, html[lang="he"] .sub-menu .zappy-nav-child > a, html[lang="ar"] .sub-menu .zappy-nav-child > a { padding-left: 0 !important; padding-right: 28px !important; }
+        .sub-menu .zappy-nav-parent > a { font-weight: 600 !important; }
+        .nav-menu.active, #navMenu.active { max-width: 100vw !important; overflow-x: hidden !important; box-sizing: border-box !important; }
+        .navbar .sub-menu li a, nav.navbar .sub-menu li a, .zappy-products-dropdown .sub-menu a { color: var(--text-dark) !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+
+    <style id="zappy-widget-visibility">
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box, .mic-access-tool-box, #mic-init-access-tool #mic-access-tool-box,
+        div[id*="mic-access-tool-box"], ._access-menu {
+          visibility: hidden; opacity: 0; pointer-events: auto !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon { display: flex !important; visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+        #mic-access-tool-box, .mic-access-tool-box, #mic-init-access-tool #mic-access-tool-box,
+        div[id*="mic-access-tool-box"], ._access-menu {
+          visibility: hidden; opacity: 0; pointer-events: auto !important;
+        }
+      }
+    </style>
+</head>
+<body>
+
+  <nav class="navbar" dir="rtl">
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </svg>
+  </button>
+
+  <button class="phone-header-btn" data-phone="+972-000-0000" aria-label="Call">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </button>
+
+  <div class="nav-container">
+    <div class="nav-right-group"><div class="nav-brand">
+      <a href="/" class="logo-link">
+        <img src="/assets/thai-hair-go-logo.webp" alt="Thai Hair Go" class="logo">
+      </a>
+    </div><ul class="nav-menu" id="navMenu"><li><a href="#features">יתרונות</a></li><li><a href="#process">תהליך</a></li><li><a href="#benefits">הטבות</a></li><li><a href="#testimonials">המלצות</a></li><li><a href="#stats">נתונים</a></li></ul></div>
+
+    
+
+    <div class="nav-cta-container">
+      <a href="#contact" class="nav-cta-btn">צור קשר</a>
+    </div>
+  </div>
+</nav>
+<script>
+
+// Navbar Mobile Menu Toggle and Contrast Fix
+(function() {
+  // Use 'load' event instead of 'DOMContentLoaded' to ensure we run AFTER all other scripts
+  window.addEventListener('load', function() {
+    
+    // FIX MOBILE BUTTON CONTRAST
+    // Detect navbar background color and apply contrasting color to mobile buttons
+    const navbar = document.querySelector('.navbar, nav, header');
+    if (!navbar) {
+      console.log('[Navbar] Navbar element not found');
+      return;
+    }
+    
+    // DECLARE VARIABLES EARLY to avoid Temporal Dead Zone errors
+    // These are used in multiple places below
+    let mobileToggle = document.getElementById('mobileToggle') ||
+                       document.querySelector('.mobile-toggle') ||
+                       document.querySelector('.hamburger') ||
+                       document.querySelector('.hamburger-menu') ||
+                       document.querySelector('.menu-toggle') ||
+                       document.querySelector('.burger-menu') ||
+                       document.querySelector('[aria-label="Menu"]') ||
+                       document.querySelector('[aria-label="תפריט"]');
+    
+    const phoneBtn = document.querySelector('.phone-header-btn');
+    
+    const computedStyle = window.getComputedStyle(navbar);
+    let bgColor = computedStyle.backgroundColor;
+    
+    console.log('[Navbar] Initial navbar background:', bgColor);
+    
+    // Check if background is transparent or rgba with 0 alpha
+    const isTransparent = bgColor === 'transparent' || 
+                         bgColor === 'rgba(0, 0, 0, 0)' ||
+                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+    
+    if (isTransparent) {
+      // Check for background-image or gradient
+      const bgImage = computedStyle.backgroundImage;
+      if (bgImage && bgImage !== 'none') {
+        console.log('[Navbar] Navbar has background image/gradient, using dark text');
+        bgColor = 'rgb(240, 240, 240)'; // Assume light background
+      } else {
+        // Transparent navbar - check body background
+        const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+        console.log('[Navbar] Navbar transparent, using body background:', bodyBg);
+        bgColor = bodyBg;
+      }
+    }
+    
+    // Calculate luminance to determine if background is light or dark
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb && rgb.length >= 3) {
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Mobile button colors are set by Claude's AI-generated CSS (same as .nav-menu a)
+      // No dynamic color overrides needed - colors come from the generated navbar CSS
+      console.log('[Navbar] Mobile button colors preserved from Claude CSS (luminance:', luminance.toFixed(2) + ')');
+      
+      // FIX ICON SIZES - Ensure SVGs are properly sized and visible
+      // INJECT CRITICAL CSS TO OVERRIDE ANY CONFLICTING RULES
+      const criticalCSS = document.createElement('style');
+      criticalCSS.id = 'zappy-mobile-nav-fix';
+      const htmlLang = document.documentElement.lang || 'en';
+      const htmlDir = document.documentElement.dir || 'ltr';
+      // Check both dir attribute AND lang for RTL detection
+      // dir="rtl" is the most reliable indicator
+      const isRTL = htmlDir === 'rtl' || htmlLang === 'he' || htmlLang === 'ar';
+      
+      criticalCSS.textContent = `
+        /* Hide mobile buttons on desktop, show only on mobile */
+        @media (min-width: 769px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            display: none !important;
+          }
+        }
+        
+        /* Show and position mobile buttons correctly on mobile */
+        @media (max-width: 768px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            z-index: 1001 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            border-radius: 50% !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 6px !important;
+            background: none !important;
+            color: var(--nav-text, var(--text-dark)) !important;
+          }
+          
+          /* LTR positioning (default): hamburger LEFT, phone RIGHT */
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .mobile-toggle,
+          html[dir="ltr"] .mobile-toggle {
+            left: 12px !important;
+            right: auto !important;
+          }
+          html:not([dir="rtl"]):not([lang="he"]):not([lang="ar"]) .phone-header-btn,
+          html[dir="ltr"] .phone-header-btn {
+            right: 12px !important;
+            left: auto !important;
+          }
+          
+          /* RTL positioning: hamburger RIGHT, phone LEFT */
+          html[dir="rtl"] .mobile-toggle,
+          html[lang="he"] .mobile-toggle,
+          html[lang="ar"] .mobile-toggle {
+            right: 12px !important;
+            left: auto !important;
+          }
+          html[dir="rtl"] .phone-header-btn,
+          html[lang="he"] .phone-header-btn,
+          html[lang="ar"] .phone-header-btn {
+            left: 12px !important;
+            right: auto !important;
+          }
+          
+          /* CRITICAL: Ensure nav-container has min-height on mobile */
+          /* All children are positioned absolutely/fixed on mobile, so height:auto collapses to 0 */
+          .nav-container {
+            min-height: 70px !important;
+            position: relative !important;
+          }
+          
+          /* Ensure SVG icons are properly sized and inherit color */
+          .mobile-toggle svg,
+          .phone-header-btn svg {
+            width: 24px !important;
+            height: 24px !important;
+            /* Don't force display - let JavaScript control hamburger/close toggle */
+          }
+          
+          /* Reset nav-cta-container on mobile - remove desktop box-shadow/padding */
+          /* that creates a visible ghost box when CTA button is hidden */
+          .nav-cta-container {
+            box-shadow: none !important;
+            padding: 0 !important;
+          }
+          
+          /* Hide nav-cta-container entirely on mobile when there's no lang-switcher */
+          /* (only the CTA button is inside, and it's hidden on mobile) */
+          .nav-cta-container:not(:has(.lang-switcher)) {
+            display: none !important;
+          }
+          
+          /* CRITICAL: Prevent hero image fade gradient from bleeding over headline text */
+          /* The .image-fade-gradient has bottom: -30px (extends below parent) */
+          /* On mobile stacked layout, this overlaps the h1 text below the image */
+          .hero-image-column {
+            overflow: hidden !important;
+          }
+          .image-fade-gradient {
+            bottom: 0 !important;
+          }
+          
+          /* Hide desktop language switcher on mobile - hamburger menu handles it */
+          /* High specificity to override stored CSS */
+          .lang-switcher,
+          .nav-cta-container .lang-switcher,
+          .nav-container .lang-switcher,
+          .navbar .lang-switcher,
+          .navbar .nav-cta-container .lang-switcher {
+            display: none !important;
+          }
+        }
+      `;
+      
+      // Remove existing fix if present and inject new one
+      const existing = document.getElementById('zappy-mobile-nav-fix');
+      if (existing) existing.remove();
+      document.head.appendChild(criticalCSS);
+      
+      console.log('[Navbar] Critical CSS injected for mobile nav positioning');
+      
+      // ONLY apply inline positioning styles on mobile viewport
+      // On desktop, the CSS handles hiding these buttons with display: none
+      // Inline styles were breaking desktop layout by overriding CSS
+      const isMobileViewport = window.innerWidth <= 768;
+      
+      if (mobileToggle) {
+        // Icon sizing applies to all viewports for consistency
+        const hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
+        const closeIcon = mobileToggle.querySelector('.close-icon');
+        
+        if (hamburgerIcon) {
+          hamburgerIcon.style.setProperty('width', '24px', 'important');
+          hamburgerIcon.style.setProperty('height', '24px', 'important');
+          hamburgerIcon.style.setProperty('display', 'block', 'important'); // Show hamburger by default
+        }
+        if (closeIcon) {
+          closeIcon.style.setProperty('width', '24px', 'important');
+          closeIcon.style.setProperty('height', '24px', 'important');
+          closeIcon.style.setProperty('display', 'none', 'important'); // Hide close icon by default
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          mobileToggle.style.setProperty('position', 'absolute', 'important');
+          mobileToggle.style.setProperty('top', '50%', 'important');
+          mobileToggle.style.setProperty('transform', 'translateY(-50%)', 'important');
+          mobileToggle.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          
+          console.log('[Navbar] Mobile toggle positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          mobileToggle.style.removeProperty('position');
+          mobileToggle.style.removeProperty('top');
+          mobileToggle.style.removeProperty('transform');
+          mobileToggle.style.removeProperty('z-index');
+          mobileToggle.style.removeProperty('left');
+          mobileToggle.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared mobile toggle inline positioning');
+        }
+      }
+      
+      if (phoneBtn) {
+        // Icon sizing applies to all viewports
+        const phoneIcon = phoneBtn.querySelector('svg');
+        if (phoneIcon) {
+          phoneIcon.style.width = '24px';
+          phoneIcon.style.height = '24px';
+          phoneIcon.setAttribute('width', '24');
+          phoneIcon.setAttribute('height', '24');
+        }
+        
+        // ONLY set positioning inline styles on mobile
+        if (isMobileViewport) {
+          phoneBtn.style.setProperty('position', 'absolute', 'important');
+          phoneBtn.style.setProperty('top', '50%', 'important');
+          phoneBtn.style.setProperty('transform', 'translateY(-50%)', 'important');
+          phoneBtn.style.setProperty('z-index', '1001', 'important');
+          
+          // Clear any inline left/right so CSS can take over based on html[dir]
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          
+          console.log('[Navbar] Phone button positioning applied (mobile viewport)');
+        } else {
+          // On desktop, clear any positioning styles to let CSS handle it
+          phoneBtn.style.removeProperty('position');
+          phoneBtn.style.removeProperty('top');
+          phoneBtn.style.removeProperty('transform');
+          phoneBtn.style.removeProperty('z-index');
+          phoneBtn.style.removeProperty('left');
+          phoneBtn.style.removeProperty('right');
+          console.log('[Navbar] Desktop viewport - cleared phone button inline positioning');
+        }
+      }
+    } else {
+      console.log('[Navbar] Could not parse background color:', bgColor);
+    }
+    
+    // MOBILE MENU TOGGLE
+    // Re-query in case DOM changed (mobileToggle already declared at top of function)
+    mobileToggle = document.getElementById('mobileToggle') ||
+                   document.querySelector('.mobile-toggle') ||
+                   document.querySelector('.hamburger') ||
+                   document.querySelector('.hamburger-menu') ||
+                   document.querySelector('.menu-toggle') ||
+                   document.querySelector('.burger-menu') ||
+                   document.querySelector('[aria-label="Menu"]') ||
+                   document.querySelector('[aria-label="תפריט"]');
+    
+    // EXPANDED SEARCH: Find nav menu by ID or class
+    const navMenu = document.getElementById('navMenu') ||
+                  document.querySelector('.nav-menu') ||
+                  document.querySelector('.nav-links') ||
+                  document.querySelector('nav ul:not(.submenu)');
+    
+    if (!mobileToggle || !navMenu) {
+      console.log('[Navbar] Mobile toggle or menu not found:', { toggle: !!mobileToggle, menu: !!navMenu });
+      return;
+    }
+    
+    // Ensure navMenu has ID for CSS targeting
+    if (!navMenu.id) {
+      navMenu.id = 'navMenu';
+    }
+    
+    console.log('[Navbar] Initializing mobile menu...');
+    
+    // Remove any existing event listeners by cloning the button
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    // Toggle menu on button click - use newToggle now
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const hamburgerIcon = this.querySelector('.hamburger-icon');
+      const closeIcon = this.querySelector('.close-icon');
+      const isActive = navMenu.classList.contains('active');
+      
+      if (isActive) {
+        // Close menu
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed');
+      } else {
+        // Open menu
+        navMenu.classList.add('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+        document.body.style.overflow = 'hidden';
+        console.log('[Navbar] Menu opened');
+      }
+    });
+    
+    // Close menu when clicking nav links (but NOT dropdown toggles)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        // Don't close if it's a dropdown child (unless it's a real navigation link)
+        if (this.getAttribute('href') === '#') return;
+        
+        const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+        const closeIcon = newToggle.querySelector('.close-icon');
+        
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed (link clicked)');
+      });
+    });
+    
+    // DROPDOWN MENU TOGGLE (for mobile and touch devices)
+    var dropdownToggles = navMenu.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var parent = this.closest('.nav-dropdown');
+        if (!parent) return;
+        
+        // Close other open dropdowns at the same level
+        var siblings = parent.parentNode.querySelectorAll('.nav-dropdown.open');
+        siblings.forEach(function(sib) {
+          if (sib !== parent) sib.classList.remove('open');
+        });
+        
+        parent.classList.toggle('open');
+        console.log('[Navbar] Dropdown toggled:', parent.classList.contains('open') ? 'open' : 'closed');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-dropdown')) {
+        var openDropdowns = document.querySelectorAll('.nav-dropdown.open');
+        openDropdowns.forEach(function(dd) { dd.classList.remove('open'); });
+      }
+    });
+    
+    console.log('[Navbar] Dropdown handlers initialized for ' + dropdownToggles.length + ' dropdowns');
+    
+    // Phone button functionality (phoneBtn already declared at top of function)
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', function() {
+        // Get phone number from placeholder in page or use default
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const phoneNumber = phoneLinks.length > 0 
+          ? phoneLinks[0].getAttribute('href').replace('tel:', '')
+          : '[business_phone]';
+        
+        window.location.href = 'tel:' + phoneNumber;
+        console.log('[Navbar] Phone button clicked');
+      });
+    }
+    
+    console.log('[Navbar] Mobile menu initialized successfully');
+    
+    // WhatsApp button visibility is now controlled via CSS (siteSettings).
+    // No JS-based desktop hiding — the button is visible on both mobile and desktop by default.
+  });
+})();
+
+</script>
+  
+  <main>
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim">
+  <!-- Background Image -->
+  <div class="index-hero-bg">
+    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Cinematic wide-angle aerial view of a luxury Thai resort infinity pool overlooking lush tropical jungle, warm golden hour light, turquoise water reflecting the sky, subtle premium medical-travel mood, aspirational and serene, high-end photography style, no people, clean and breathtaking landscape" width="1200" height="700" src="/assets/site-index-hero-image-1.webp" alt="נוף יוקרתי של אתר נופש בתאילנד עם בריכת אינסוף ועצי דקל">
+  </div>
+
+  <!-- Scrim Overlay -->
+  <div class="index-hero-scrim" aria-hidden="true"></div>
+
+  <!-- Decorative compass watermark -->
+  <svg class="index-hero-compass" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="90" stroke="rgba(32,197,199,0.18)" stroke-width="1.5" stroke-dasharray="6 4"></circle>
+    <circle cx="100" cy="100" r="70" stroke="rgba(32,197,199,0.10)" stroke-width="1"></circle>
+    <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(32,197,199,0.12)" stroke-width="1"></line>
+    <line x1="10" y1="100" x2="190" y2="100" stroke="rgba(32,197,199,0.12)" stroke-width="1"></line>
+    <line x1="29" y1="29" x2="171" y2="171" stroke="rgba(32,197,199,0.08)" stroke-width="1"></line>
+    <line x1="171" y1="29" x2="29" y2="171" stroke="rgba(32,197,199,0.08)" stroke-width="1"></line>
+    <polygon points="100,14 106,94 100,108 94,94" fill="rgba(32,197,199,0.25)"></polygon>
+    <polygon points="100,186 106,106 100,92 94,106" fill="rgba(255,255,255,0.12)"></polygon>
+    <circle cx="100" cy="100" r="6" fill="rgba(32,197,199,0.35)"></circle>
+    <circle cx="100" cy="100" r="3" fill="rgba(32,197,199,0.6)"></circle>
+  </svg>
+
+  <!-- Decorative palm circle stamp -->
+  <svg class="index-hero-stamp" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="70" cy="70" r="62" stroke="rgba(255,255,255,0.45)" stroke-width="1.2" stroke-dasharray="5 3"></circle>
+    <path d="M70 95 Q68 80 65 70 Q60 58 50 50 Q58 56 65 68 Q62 55 58 45 Q66 55 68 68 Q70 55 72 45 Q76 55 75 68 Q82 56 90 50 Q80 58 75 70 Q72 80 70 95Z" fill="rgba(255,255,255,0.5)"></path>
+    <path d="M67 95 Q70 110 70 118" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"></path>
+    <path id="index-hero-stamp-path" d="M70,70 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0" fill="none"></path>
+    <text font-size="9" fill="rgba(255,255,255,0.55)" font-family="Inter,sans-serif" letter-spacing="4" font-weight="600">
+      <textPath href="#index-hero-stamp-path">THAILAND · HAIR TRANSPLANT · LUXURY TRAVEL ·</textPath>
+    </text>
+  </svg>
+
+  <!-- Route line motif -->
+  <div class="index-hero-route-line" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 120 4" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="2" x2="120" y2="2" stroke="var(--primary)" stroke-width="2" stroke-dasharray="8 4"></line>
+      <circle cx="0" cy="2" r="3" fill="var(--primary)"></circle>
+      <circle cx="120" cy="2" r="3" fill="var(--secondary)"></circle>
+    </svg>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="index-hero-content">
+    <div class="index-hero-label">
+      <span>השתלת שיער בתאילנד</span>
+    </div>
+
+    <h1 class="index-hero-h1">חבילת השתלת שיער בחו"ל<br><em>עם חופשה מפנקת בתאילנד</em></h1>
+
+    <h3 class="index-hero-subtitle">שלבו טיפול מקצועי בהשתלת שיער עם חוויית נסיעה בלתי נשכחת — מרפאות פרמיום, ליווי אישי מלא, ואירוח תאילנדי חם</h3>
+
+    <p class="index-hero-reassurance">
+      <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="var(--primary)" stroke-width="1.5"></circle><path d="M5 8.5l2 2 4-4" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      מרפאות מוסמכות · ליווי אישי · אירוח יוקרתי
+    </p>
+
+    <div class="index-hero-ctas">
+      <a href="#contact" class="index-hero-btn-primary">
+        <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 3h12v9H3V3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M3 3l6 5.5L15 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        לייעוץ חינם
+      </a>
+      <a href="#journey" class="index-hero-btn-secondary">
+        גלו את המסע
+        <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 8H3M7 5l-3 3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Divider -->
+  <div class="index-hero-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,55 Q120,38 240,52 T480,42 Q600,35 720,48 T960,40 Q1080,36 1200,50 T1440,44 L1440,90 Z" fill="#F6F4EF"></path>
+    </svg>
+  </div>
+</section>
+
+<section id="features" class="index-features-section" data-layout-spec="בית-features" dir="rtl">
+  <!-- Compass rose watermark decoration -->
+  <div class="index-features-compass" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="90" stroke="rgba(32,197,199,0.10)" stroke-width="1.5"></circle>
+      <circle cx="100" cy="100" r="70" stroke="rgba(32,197,199,0.07)" stroke-width="1"></circle>
+      <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(32,197,199,0.08)" stroke-width="1"></line>
+      <line x1="10" y1="100" x2="190" y2="100" stroke="rgba(32,197,199,0.08)" stroke-width="1"></line>
+      <line x1="27" y1="27" x2="173" y2="173" stroke="rgba(32,197,199,0.05)" stroke-width="1"></line>
+      <line x1="173" y1="27" x2="27" y2="173" stroke="rgba(32,197,199,0.05)" stroke-width="1"></line>
+      <polygon points="100,10 93,40 100,35 107,40" fill="rgba(32,197,199,0.15)"></polygon>
+      <polygon points="100,190 93,160 100,165 107,160" fill="rgba(32,197,199,0.08)"></polygon>
+      <polygon points="10,100 40,93 35,100 40,107" fill="rgba(32,197,199,0.08)"></polygon>
+      <polygon points="190,100 160,93 165,100 160,107" fill="rgba(32,197,199,0.08)"></polygon>
+      <circle cx="100" cy="100" r="6" fill="rgba(32,197,199,0.18)"></circle>
+      <circle cx="100" cy="100" r="3" fill="rgba(32,197,199,0.30)"></circle>
+    </svg>
+  </div>
+
+  <div class="index-features-container">
+    <!-- Intro Block -->
+    <div class="index-features-intro">
+      <div class="index-features-accent-line"></div>
+      <h2 class="index-features-heading">שלושה עמודי תווך, חוויה אחת שמשנה חיים</h2>
+      <p class="index-features-subtext">Thai Hair Go הופכת פרוצדורה רפואית מלחיצה לשדרוג חיים מתוכנן היטב — שבו אתה חוזר הביתה עם שיער חדש וזיכרונות בלתי נשכחים מתאילנד.</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="index-features-grid">
+
+      <!-- Card 1: Expert Clinics -->
+      <article class="index-features-card">
+        <div class="index-features-card-image-wrap">
+          <img data-placeholder="index-features-image-1" data-context="A modern, pristine hair transplant clinic interior in Thailand — clean white surfaces, advanced medical equipment, professional Thai medical staff in white coats consulting with a patient, warm ambient lighting, premium medical tourism atmosphere" width="400" height="220" src="/assets/site-index-features-image-1.webp" alt="קליניקה מתקדמת להשתלת שיער בתאילנד">
+        </div>
+        <div class="index-features-card-body">
+          <div class="index-features-icon-wrap index-features-icon-teal">
+            <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+              <circle cx="20" cy="20" r="18" fill="rgba(32,197,199,0.12)"></circle>
+              <path d="M20 10 C20 10 14 14 14 20 C14 24.4 16.7 28 20 29 C23.3 28 26 24.4 26 20 C26 14 20 10 20 10Z" stroke="#20C5C7" stroke-width="1.8" fill="none"></path>
+              <line x1="20" y1="10" x2="20" y2="29" stroke="#20C5C7" stroke-width="1.5"></line>
+              <line x1="14" y1="20" x2="26" y2="20" stroke="#20C5C7" stroke-width="1.5"></line>
+              <circle cx="20" cy="20" r="2.5" fill="#20C5C7"></circle>
+            </svg>
+          </div>
+          <h3 class="index-features-card-title">קליניקות מומחים בתאילנד</h3>
+          <p class="index-features-card-text">אנו משתפים פעולה אך ורק עם קליניקות מוסמכות ומובילות בתאילנד, המתמחות בהשתלות שיער FUE ו-DHI. הצוות הרפואי שלנו מבצע אלפי פרוצדורות מוצלחות בשנה, עם תוצאות טבעיות ועמידות לאורך זמן — במחיר השתלת שיער בתאילנד שאין לו מקבילה בישראל.</p>
+        </div>
+      </article>
+
+      <!-- Card 2: Luxury Vacation -->
+      <article class="index-features-card">
+        <div class="index-features-card-image-wrap">
+          <img data-placeholder="index-features-image-2" data-context="A luxurious Thai resort pool villa at sunset — infinity pool overlooking tropical jungle, elegant wooden deck furniture, golden warm light, lush palm trees, serene and indulgent atmosphere representing a luxury vacation in Thailand" width="400" height="220" src="/assets/site-index-features-image-2.webp" alt="חופשה מפנקת בתאילנד במסגרת חבילת השתלת שיער">
+        </div>
+        <div class="index-features-card-body">
+          <div class="index-features-icon-wrap index-features-icon-coral">
+            <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+              <circle cx="20" cy="20" r="18" fill="rgba(255,122,89,0.12)"></circle>
+              <path d="M20 8 Q24 14 24 18 C24 22.4 22.2 25 20 25 C17.8 25 16 22.4 16 18 C16 14 20 8 20 8Z" stroke="#FF7A59" stroke-width="1.8" fill="none"></path>
+              <path d="M12 22 Q16 18 20 22 Q24 26 28 22" stroke="#FF7A59" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
+              <path d="M10 28 L30 28" stroke="#FF7A59" stroke-width="1.5" stroke-linecap="round"></path>
+              <circle cx="20" cy="18" r="2" fill="#FF7A59"></circle>
+            </svg>
+          </div>
+          <h3 class="index-features-card-title">חופשת יוקרה משולבת</h3>
+          <p class="index-features-card-text">חבילת השתלת שיער בחו"ל עם חופשה — זה בדיוק מה שאנחנו מציעים. בין הטיפולים תיהנה מאתרי הנופש הטובים בתאילנד, קולינריה מקומית, עיסויים מסורתיים וחוויות תרבות עשירות. הטיול מתוכנן כך שההחלמה מרגישה כמו פינוק, לא כמו הגבלה.</p>
+        </div>
+      </article>
+
+      <!-- Card 3: Personal Guidance -->
+      <article class="index-features-card">
+        <div class="index-features-card-image-wrap">
+          <img data-placeholder="index-features-image-3" data-context="A friendly Israeli-looking male travel consultant and medical coordinator sitting with a client at a modern office desk, reviewing a travel and medical itinerary together on a tablet, warm professional atmosphere, maps and documents visible, trust and care expressed in body language" width="400" height="220" src="/assets/site-index-features-image-3.webp" alt="ליווי אישי מקצה לקצה בחבילת התיירות הרפואית">
+        </div>
+        <div class="index-features-card-body">
+          <div class="index-features-icon-wrap index-features-icon-accent">
+            <svg data-element-type="icon" data-icon-type="svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+              <circle cx="20" cy="20" r="18" fill="rgba(139,92,246,0.12)"></circle>
+              <circle cx="20" cy="15" r="5" stroke="#8B5CF6" stroke-width="1.8" fill="none"></circle>
+              <path d="M11 31 C11 26.6 15 23 20 23 C25 23 29 26.6 29 31" stroke="#8B5CF6" stroke-width="1.8" fill="none" stroke-linecap="round"></path>
+              <path d="M27 10 L29 12 L34 7" stroke="#20C5C7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="index-features-card-title">ליווי אישי מקצה לקצה</h3>
+          <p class="index-features-card-text">מהייעוץ הראשוני ועד לנחיתה בישראל — אנחנו לצידך בכל שלב. רכז אישי ישראלי מטפל בהזמנות הטיסות, בית המלון, התיאום הרפואי ומענה 24/7 בעברית. פתרון לנשירת שיער בגברים בחו"ל לעולם לא היה כל כך פשוט ובטוח.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Bottom diagonal divider transitioning to dark section -->
+  <div class="index-features-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,55 L1200,15 L1200,80 Z" fill="#172026"></path>
+    </svg>
+  </div>
+</section>
+
+<section id="process" class="index-process-section" data-layout-spec="בית-process" dir="rtl">
+  <!-- Decorative compass rose watermark -->
+  <div class="process-compass-decor" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+      <circle cx="100" cy="100" r="90" stroke="rgba(32,197,199,0.1)" stroke-width="1.5" stroke-dasharray="4 6"></circle>
+      <circle cx="100" cy="100" r="60" stroke="rgba(32,197,199,0.08)" stroke-width="1"></circle>
+      <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(32,197,199,0.07)" stroke-width="1"></line>
+      <line x1="10" y1="100" x2="190" y2="100" stroke="rgba(32,197,199,0.07)" stroke-width="1"></line>
+      <line x1="29" y1="29" x2="171" y2="171" stroke="rgba(32,197,199,0.05)" stroke-width="1"></line>
+      <line x1="171" y1="29" x2="29" y2="171" stroke="rgba(32,197,199,0.05)" stroke-width="1"></line>
+      <polygon points="100,10 106,94 100,100 94,94" fill="rgba(32,197,199,0.15)"></polygon>
+      <polygon points="100,190 106,106 100,100 94,106" fill="rgba(32,197,199,0.08)"></polygon>
+      <polygon points="10,100 94,94 100,100 94,106" fill="rgba(32,197,199,0.08)"></polygon>
+      <polygon points="190,100 106,94 100,100 106,106" fill="rgba(32,197,199,0.15)"></polygon>
+      <circle cx="100" cy="100" r="8" fill="rgba(32,197,199,0.15)"></circle>
+      <circle cx="100" cy="100" r="3" fill="rgba(32,197,199,0.4)"></circle>
+    </svg>
+  </div>
+
+  <div class="process-container">
+    <!-- LEFT (START) column: content -->
+    <div class="process-content-col">
+      <div class="process-label-line">
+        <span class="process-label-accent"></span>
+        <span class="process-label-text">המסע שלך</span>
+      </div>
+
+      <h2 class="process-heading">ארבעה צעדים לשינוי<br>שתמיד חלמת עליו</h2>
+      <p class="process-subtext">חבילת השתלת שיער בחו"ל עם חופשה — פשוטה, שקופה ומלווה לאורך כל הדרך. אנחנו כאן כדי להפוך את הטיול הרפואי לחוויה נטולת חרדה ומלאת השראה.</p>
+
+      <!-- Steps -->
+      <div class="process-steps">
+
+        <!-- Step 1 -->
+        <div class="process-step">
+          <div class="step-left-rail">
+            <div class="step-number">01</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">ייעוץ ותכנון אישי</h3>
+            <p class="step-desc">שיחת ייעוץ חינמית עם מומחה שלנו — נבחן את מצב השיער שלך, נסביר את האפשרויות, ונבנה יחד חבילה מותאמת לצרכים ולתקציב שלך.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step">
+          <div class="step-left-rail">
+            <div class="step-number">02</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">הגעה לתאילנד ותיאום קליני</h3>
+            <p class="step-desc">אנחנו מחכים לך בנמל התעופה. נלווה אותך אל המלון ואל הקליניקה, נדאג לכל התיאומים הרפואיים ונוודא שאתה מרגיש בנוח לפני ההליך.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step">
+          <div class="step-left-rail">
+            <div class="step-number">03</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">ההשתלה וליווי ההחלמה</h3>
+            <p class="step-desc">ההליך מתבצע על ידי רופאים מומחים בטכנולוגיה מתקדמת. לאחר מכן, הצוות שלנו לצדך — עם הנחיות ברורות, מעקב רפואי ותמיכה מלאה.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-step process-step--last">
+          <div class="step-left-rail">
+            <div class="step-number">04</div>
+          </div>
+          <div class="step-body">
+            <h3 class="step-title">חופשה מפנקת ומעקב מתמשך</h3>
+            <p class="step-desc">בזמן שהשיער מתחיל את מסע ההתחדשות, אתה נהנה מתאילנד — חופים, ספא, אוכל מדהים. גם לאחר החזרה, אנחנו ממשיכים לעקוב ולתמוך.</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- End Steps -->
+
+      <a href="#contact" class="process-cta-btn">
+        <span>התחל את המסע שלך</span>
+        <svg data-element-type="icon" data-icon-type="svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      </a>
+    </div>
+
+    <!-- RIGHT (END) column: imagery -->
+    <div class="process-image-col">
+      <div class="process-image-wrapper">
+        <figure class="process-main-image-fig">
+          <img data-placeholder="index-process-image-1" data-context="A premium medical tourism scene in Thailand: a modern, immaculate hair transplant clinic interior with natural wood accents and tropical plants, a confident male patient consulting with a friendly Thai doctor in a white coat, warm golden afternoon light streaming through large windows, lush greenery visible outside, luxurious yet medically professional atmosphere, editorial photography style with natural color grading" width="520" height="680" src="/assets/site-index-process-image-1.webp" alt="ייעוץ מקצועי בקליניקת השתלת שיער בתאילנד" class="process-main-img">
+        </figure>
+
+        <!-- Decorative route-map dots -->
+        <div class="process-route-dots" aria-hidden="true">
+          <span class="route-dot"></span>
+          <span class="route-dot"></span>
+          <span class="route-dot"></span>
+          <span class="route-dot"></span>
+          <span class="route-dot"></span>
+        </div>
+
+        <!-- Secondary tile peeking from bottom-end corner -->
+        <figure class="process-secondary-fig">
+          <img data-placeholder="index-process-image-2" data-context="An aerial view of a stunning Thai tropical beach resort with turquoise water, white sand, and lush palm trees, a man relaxing on a sun lounger with a peaceful expression, luxury vacation atmosphere, warm sunlight, premium travel photography, natural color grading" width="220" height="160" src="/assets/site-index-process-image-2.webp" alt="חופשה מפנקת בתאילנד לאחר השתלת שיער" class="process-secondary-img">
+          <div class="secondary-tile-badge">
+            <svg data-element-type="icon" data-icon-type="svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+            <span>תאילנד</span>
+          </div>
+        </figure>
+
+        <!-- Floating stat card -->
+        <div class="process-stat-card" aria-label="סטטיסטיקה: מעל 3000 לקוחות מרוצים">
+          <div class="stat-number">3,000+</div>
+          <div class="stat-label">לקוחות מרוצים</div>
+          <div class="stat-stars" aria-label="דירוג 5 כוכבים">
+            <svg data-element-type="icon" data-icon-type="svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg data-element-type="icon" data-icon-type="svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg data-element-type="icon" data-icon-type="svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg data-element-type="icon" data-icon-type="svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg data-element-type="icon" data-icon-type="svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom SVG divider transitioning to light section -->
+  <div class="process-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,45 Q120,20 240,38 T480,30 Q600,42 720,28 T960,36 Q1080,22 1200,35 T1440,30 L1440,90 Z" fill="#F5F2ED"></path>
+    </svg>
+  </div>
+</section>
+
+<section id="benefits" class="index-benefits-section" data-layout-spec="בית-benefits" dir="rtl">
+  <!-- Compass rose watermark decoration -->
+  <div class="ibs-compass-watermark" aria-hidden="true">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+      <circle cx="100" cy="100" r="90" stroke="rgba(32,197,199,0.10)" stroke-width="1.5"></circle>
+      <circle cx="100" cy="100" r="70" stroke="rgba(32,197,199,0.07)" stroke-width="1"></circle>
+      <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(32,197,199,0.07)" stroke-width="1"></line>
+      <line x1="10" y1="100" x2="190" y2="100" stroke="rgba(32,197,199,0.07)" stroke-width="1"></line>
+      <line x1="27" y1="27" x2="173" y2="173" stroke="rgba(32,197,199,0.05)" stroke-width="1"></line>
+      <line x1="173" y1="27" x2="27" y2="173" stroke="rgba(32,197,199,0.05)" stroke-width="1"></line>
+      <polygon points="100,10 106,94 100,100 94,94" fill="rgba(32,197,199,0.15)"></polygon>
+      <polygon points="100,190 106,106 100,100 94,106" fill="rgba(32,197,199,0.08)"></polygon>
+      <polygon points="10,100 94,106 100,100 94,94" fill="rgba(32,197,199,0.08)"></polygon>
+      <polygon points="190,100 106,106 100,100 106,94" fill="rgba(32,197,199,0.15)"></polygon>
+    </svg>
+  </div>
+
+  <div class="ibs-container">
+    <!-- Two-column layout: image collage (left/start) + content (right/end) -->
+    <div class="ibs-layout">
+
+      <!-- Image Collage Column (inline-start / left in RTL visual) -->
+      <div class="ibs-collage-col">
+        <div class="ibs-collage-wrapper">
+          <!-- Patterned backplate -->
+          <div class="ibs-backplate" aria-hidden="true"></div>
+          <!-- Main large image -->
+          <figure class="ibs-main-image-figure">
+            <img data-placeholder="index-benefits-image-1" data-context="A modern, bright and luxurious hair transplant clinic interior in Thailand — clean white surgical room with soft ambient lighting, a comfortable reclining chair, professional medical equipment, and a large window with a tropical garden view outside. The atmosphere is calm, premium, and medically reassuring. Editorial photography style." width="520" height="390" src="/assets/site-index-benefits-image-1.webp" alt="קליניקה מקצועית להשתלת שיער בתאילנד" class="ibs-main-img">
+          </figure>
+          <!-- Smaller Thailand lifestyle tile peeking from bottom-start corner -->
+          <figure class="ibs-peek-image-figure">
+            <img data-placeholder="index-benefits-image-2" data-context="A vibrant Thailand lifestyle scene — a serene tropical resort pool surrounded by lush palm trees and exotic flowers, with a guest relaxing on a sun lounger, golden afternoon light, turquoise water. Conveys the vacation and luxury recovery experience. Editorial travel photography style." width="220" height="165" src="/assets/site-index-benefits-image-2.webp" alt="חופשה מפנקת בתאילנד לצד הטיפול" class="ibs-peek-img">
+            <!-- Orchid accent decoration on peek tile -->
+            <div class="ibs-orchid-accent" aria-hidden="true">
+              <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                <ellipse cx="40" cy="55" rx="8" ry="14" fill="#D64E9A" opacity="0.85" transform="rotate(-20 40 55)"></ellipse>
+                <ellipse cx="52" cy="45" rx="8" ry="14" fill="#E87ABF" opacity="0.75" transform="rotate(30 52 45)"></ellipse>
+                <ellipse cx="28" cy="45" rx="8" ry="14" fill="#D64E9A" opacity="0.75" transform="rotate(-50 28 45)"></ellipse>
+                <ellipse cx="40" cy="35" rx="8" ry="14" fill="#C93A8A" opacity="0.80" transform="rotate(10 40 35)"></ellipse>
+                <circle cx="40" cy="47" r="5" fill="#FFD6EE" opacity="0.9"></circle>
+                <line x1="40" y1="52" x2="40" y2="72" stroke="#8B5CF6" stroke-width="1.5" opacity="0.5"></line>
+                <line x1="40" y1="65" x2="32" y2="75" stroke="#8B5CF6" stroke-width="1.2" opacity="0.4"></line>
+                <line x1="40" y1="60" x2="48" y2="72" stroke="#8B5CF6" stroke-width="1.2" opacity="0.4"></line>
+              </svg>
+            </div>
+          </figure>
+          <!-- Subtle label badge on main image -->
+          <div class="ibs-clinic-badge">
+            <span class="ibs-badge-dot"></span>
+            <span class="ibs-badge-text">קליניקות מוסמכות בתאילנד</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Column (inline-end / right in RTL visual) -->
+      <div class="ibs-content-col">
+        <!-- Section accent line -->
+        <div class="ibs-accent-line" aria-hidden="true"></div>
+        <p class="ibs-eyebrow">למה לבחור ב-Thai Hair Go?</p>
+        <h2 class="ibs-heading">חבילת השתלת שיער בחו"ל עם חופשה —<br>שינוי אמיתי, חוויה בלתי נשכחת</h2>
+        <p class="ibs-intro">אנחנו לא רק מציעים השתלת שיער מקצועית במחיר השתלת שיער בתאילנד — אנחנו יוצרים מסע שלם. מהרגע שיצאתם מהבית ועד שחזרתם הביתה עם ביטחון מחודש, כל פרט מתוכנן עבורכם.</p>
+
+        <!-- Benefits list -->
+        <ul class="ibs-benefits-list">
+          <li class="ibs-benefit-item">
+            <div class="ibs-benefit-marker">
+              <span class="ibs-marker-num">01</span>
+              <span class="ibs-marker-line" aria-hidden="true"></span>
+            </div>
+            <div class="ibs-benefit-content">
+              <h3 class="ibs-benefit-title">סטנדרטים רפואיים בינלאומיים</h3>
+              <p class="ibs-benefit-desc">הקליניקות שאנחנו עובדים איתן עומדות בתקנים הגבוהים ביותר — צוות מנתחים מוסמך, טכנולוגיית FUE מתקדמת, ותוצאות שמדברות בעד עצמן.</p>
+            </div>
+          </li>
+          <li class="ibs-benefit-item">
+            <div class="ibs-benefit-marker">
+              <span class="ibs-marker-num">02</span>
+              <span class="ibs-marker-line" aria-hidden="true"></span>
+            </div>
+            <div class="ibs-benefit-content">
+              <h3 class="ibs-benefit-title">פרטיות ונוחות מלאה</h3>
+              <p class="ibs-benefit-desc">הטיפול מתבצע בסביבה דיסקרטית ומפנקת. אתם נהנים מחדרי אשפוז פרטיים, ליווי אישי, ושקט נפשי לאורך כל התהליך.</p>
+            </div>
+          </li>
+          <li class="ibs-benefit-item">
+            <div class="ibs-benefit-marker">
+              <span class="ibs-marker-num">03</span>
+              <span class="ibs-marker-line" aria-hidden="true"></span>
+            </div>
+            <div class="ibs-benefit-content">
+              <h3 class="ibs-benefit-title">ליווי אישי מותאם לכם</h3>
+              <p class="ibs-benefit-desc">רכז ישראלי צמוד לאורך כל הדרך — מהתיאום הראשוני, דרך הטיסה, הלינה, הטיפול, ועד לחזרה הביתה. אתם לא לבד לרגע.</p>
+            </div>
+          </li>
+          <li class="ibs-benefit-item">
+            <div class="ibs-benefit-marker">
+              <span class="ibs-marker-num">04</span>
+              <span class="ibs-marker-line" aria-hidden="true"></span>
+            </div>
+            <div class="ibs-benefit-content">
+              <h3 class="ibs-benefit-title">שינוי + חופשה = חוויה כפולה</h3>
+              <p class="ibs-benefit-desc">בין ימי ההחלמה תגלו את תאילנד — חופים קסומים, ספא מפנקים, ומסעדות עולמיות. הטיול הזה הוא הרבה יותר מטיפול רפואי.</p>
+            </div>
+          </li>
+          <li class="ibs-benefit-item">
+            <div class="ibs-benefit-marker">
+              <span class="ibs-marker-num">05</span>
+              <span class="ibs-marker-line" aria-hidden="true"></span>
+            </div>
+            <div class="ibs-benefit-content">
+              <h3 class="ibs-benefit-title">ביטחון עצמי — לא רק מראה חדש</h3>
+              <p class="ibs-benefit-desc">אנחנו מאמינים שהשינוי האמיתי הוא הרגשי. כשאתם חוזרים עם שיער חדש וזיכרונות מדהימים — זה משנה את האופן שבו אתם מסתכלים על עצמכם.</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Pull-quote -->
+        <blockquote class="ibs-pull-quote">
+          <span class="ibs-quote-mark" aria-hidden="true">"</span>
+          <p class="ibs-quote-text">חוזרים הביתה עם ביטחון מחודש, שיער שצומח, וסיפורים שישארו איתכם לכל החיים.</p>
+          <span class="ibs-quote-mark ibs-quote-mark--close" aria-hidden="true">"</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom torn-paper divider transitioning to testimonials (dark section) -->
+  <div class="ibs-divider-wrapper">
+    <!-- Orchid-to-turquoise gradient line -->
+    <div class="ibs-gradient-rule" aria-hidden="true"></div>
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,38 Q30,32 60,40 T120,34 Q160,38 200,30 T280,36 Q320,32 360,40 T440,34 Q480,38 520,30 T600,36 Q640,32 680,40 T760,34 Q800,38 840,30 T920,36 Q960,32 1000,40 T1080,34 Q1120,38 1160,30 T1240,36 Q1300,32 1360,40 T1440,34 L1440,80 Z" fill="#F0EBE3"></path>
+    </svg>
+  </div>
+</section>
+
+<section id="testimonials" class="index-testimonials-section" data-layout-spec="בית-testimonials" dir="rtl">
+  <!-- Decorative orchid motif -->
+  <svg class="its-orchid-decor" data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 120 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="60" cy="40" rx="18" ry="28" fill="#D64E9A" opacity="0.18" transform="rotate(-20 60 40)"></ellipse>
+    <ellipse cx="40" cy="70" rx="14" ry="22" fill="#D64E9A" opacity="0.13" transform="rotate(15 40 70)"></ellipse>
+    <ellipse cx="80" cy="65" rx="14" ry="22" fill="#FF7A59" opacity="0.10" transform="rotate(-10 80 65)"></ellipse>
+    <ellipse cx="60" cy="90" rx="10" ry="16" fill="#D64E9A" opacity="0.15" transform="rotate(5 60 90)"></ellipse>
+    <line x1="60" y1="40" x2="60" y2="160" stroke="#D64E9A" stroke-width="1.5" opacity="0.12"></line>
+    <circle cx="60" cy="92" r="5" fill="#FF7A59" opacity="0.22"></circle>
+  </svg>
+
+  <div class="its-container">
+    <!-- Section header -->
+    <div class="its-header">
+      <div class="its-accent-line"></div>
+      <p class="its-eyebrow">חוויות אמיתיות</p>
+      <h2 class="its-title">מה אומרים אלה שכבר עשו את הצעד</h2>
+      <p class="its-subtitle">לקוחותינו לא רק קיבלו טיפול — הם חזרו עם ביטחון חדש, זיכרונות בלתי נשכחים, ושיער שמחזיר אותם לעצמם.</p>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="its-trust-strip">
+      <div class="its-trust-badge">
+        <span class="its-trust-icon"><i class="fa-solid fa-shield-halved"></i></span>
+        <span class="its-trust-text">קליניקות שותפות מובחרות</span>
+      </div>
+      <div class="its-trust-divider"></div>
+      <div class="its-trust-badge">
+        <span class="its-trust-icon"><i class="fa-solid fa-compass"></i></span>
+        <span class="its-trust-text">ליווי אישי לאורך כל הדרך</span>
+      </div>
+      <div class="its-trust-divider"></div>
+      <div class="its-trust-badge">
+        <span class="its-trust-icon"><i class="fa-solid fa-plane-departure"></i></span>
+        <span class="its-trust-text">חוויית נסיעה מפנקת ומאורגנת</span>
+      </div>
+      <div class="its-trust-divider"></div>
+      <div class="its-trust-badge">
+        <span class="its-trust-icon"><i class="fa-solid fa-star"></i></span>
+        <span class="its-trust-text">שביעות רצון מלאה מהתוצאות</span>
+      </div>
+    </div>
+
+    <!-- Testimonial cards grid -->
+    <div class="its-grid">
+
+      <!-- Card 1 -->
+      <article class="its-card">
+        <div class="its-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="its-quote">
+          <p>הגעתי לתאילנד עם ספקות רבים, ויצאתי עם ביטחון שלא הרגשתי שנים. הצוות ב-Thai Hair Go ארגן הכל — מהטיסה ועד הטיפול ועד הסיור בבנגקוק. הרגשתי שמישהו דואג לי בכל שלב.</p>
+        </blockquote>
+        <footer class="its-card-footer">
+          <div class="its-avatar">
+            <span class="its-avatar-initial">א</span>
+          </div>
+          <div class="its-author-info">
+            <cite class="its-author-name">אלון</cite>
+            <span class="its-author-detail">תיאום הנסיעה ושירות אישי</span>
+          </div>
+          <div class="its-stars" aria-label="דירוג 5 כוכבים">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="its-card its-card--featured">
+        <div class="its-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="its-quote">
+          <p>חיפשתי חבילת השתלת שיער בחו"ל עם חופשה ומצאתי בדיוק את מה שרציתי. הקליניקה הייתה מקצועית ברמה אחרת, והימים שאחרי הטיפול בילינו בחופי פוקט — פשוט מדהים. ממליץ בחום לכל גבר שחושב על זה.</p>
+        </blockquote>
+        <footer class="its-card-footer">
+          <div class="its-avatar its-avatar--teal">
+            <span class="its-avatar-initial">מ</span>
+          </div>
+          <div class="its-author-info">
+            <cite class="its-author-name">מיכאל</cite>
+            <span class="its-author-detail">חוויית הקליניקה ותוצאות הטיפול</span>
+          </div>
+          <div class="its-stars" aria-label="דירוג 5 כוכבים">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="its-card">
+        <div class="its-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="its-quote">
+          <p>המחיר להשתלת שיער בתאילנד היה נמוך משמעותית ממה שקיבלתי כהצעה בארץ, אבל האיכות הייתה גבוהה בהרבה. הצוות ידע לענות על כל שאלה, ותהליך ההחלמה עבר בצורה חלקה תוך כדי שאני נהנה מהמסעדות המקומיות.</p>
+        </blockquote>
+        <footer class="its-card-footer">
+          <div class="its-avatar its-avatar--coral">
+            <span class="its-avatar-initial">ד</span>
+          </div>
+          <div class="its-author-info">
+            <cite class="its-author-name">דניאל</cite>
+            <span class="its-author-detail">ביטחון עצמי ותחושת חידוש</span>
+          </div>
+          <div class="its-stars" aria-label="דירוג 5 כוכבים">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+        </footer>
+      </article>
+
+    </div>
+    <!-- End grid -->
+
+  </div>
+
+  <!-- Bottom curved divider transitioning to dark stats section -->
+  <div class="its-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,90 L0,55 Q150,20 300,42 Q450,62 600,28 Q750,5 900,38 Q1050,62 1200,40 L1200,90 Z" fill="#172026"></path>
+    </svg>
+  </div>
+
+</section>
+
+<section class="index-stats-section" data-layout-spec="בית-stats" dir="rtl">
+  <div class="index-stats-inner">
+
+    <!-- Intro Block -->
+    <div class="index-stats-intro">
+      <div class="index-stats-accent-line"></div>
+      <h2 class="index-stats-heading">המספרים מדברים בעד עצמם</h2>
+      <p class="index-stats-subtext">אלפי גברים כבר עשו את הצעד — השתלת שיער בתאילנד עם חבילת חופשה מפנקת, ליווי אישי מלא, ומרפאות פרמיום בדרגה בינלאומית.</p>
+    </div>
+
+    <!-- Metrics Grid -->
+    <div class="index-stats-grid">
+
+      <article class="index-stats-metric">
+        <span class="index-stats-number">2,400<span class="index-stats-plus">+</span></span>
+        <div class="index-stats-divider-micro"></div>
+        <p class="index-stats-label">לקוחות מרוצים שעברו את התהליך</p>
+      </article>
+
+      <article class="index-stats-metric">
+        <span class="index-stats-number index-stats-number--coral">98<span class="index-stats-pct">%</span></span>
+        <div class="index-stats-divider-micro index-stats-divider-micro--coral"></div>
+        <p class="index-stats-label">שביעות רצון מהתוצאה הסופית</p>
+      </article>
+
+      <article class="index-stats-metric">
+        <span class="index-stats-number">12</span>
+        <div class="index-stats-divider-micro"></div>
+        <p class="index-stats-label">מרפאות פרמיום מאושרות בתאילנד</p>
+      </article>
+
+      <article class="index-stats-metric">
+        <span class="index-stats-number index-stats-number--coral">360<span class="index-stats-deg">°</span></span>
+        <div class="index-stats-divider-micro index-stats-divider-micro--coral"></div>
+        <p class="index-stats-label">ליווי מלא — מהטיסה ועד לאחר הטיפול</p>
+      </article>
+
+    </div>
+
+    <!-- Reassurance Paragraph -->
+    <div class="index-stats-reassurance">
+      <p>כל חבילת השתלת שיער בחו"ל עם חופשה מתוכננת בקפידה עבורך בלבד — תיאום מרפאה, לינה, העברות ותמיכה רפואית לאורך כל הדרך. אתה מתמקד בהחלמה ובחוויה; אנחנו מטפלים בכל השאר.</p>
+    </div>
+
+  </div>
+
+  <!-- Bottom Divider: gradient fade from deep ink to pearl mist -->
+  <div class="index-stats-divider-wrapper">
+    <svg data-no-icon-edit="true" aria-hidden="true" viewBox="0 0 1200 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="statsBottomGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#172026" stop-opacity="0"></stop>
+          <stop offset="100%" stop-color="#F6F4EF" stop-opacity="1"></stop>
+        </linearGradient>
+      </defs>
+      <path d="M0,90 L0,28 Q150,12 300,24 T600,16 Q750,8 900,20 T1200,14 L1200,90 Z" fill="var(--bg-light)"></path>
+      <path d="M0,90 L0,28 Q150,12 300,24 T600,16 Q750,8 900,20 T1200,14 L1200,90 Z" fill="var(--bg-light)" opacity="0.5"></path>
+      <path d="M0,28 Q150,12 300,24 T600,16 Q750,8 900,20 T1200,14" fill="var(--bg-light)" stroke="#20C5C7" stroke-width="1.5" opacity="0.35"></path>
+    </svg>
+  </div>
+
+</section>
+
+<section id="contact" class="index-contact-section" data-layout-spec="בית-contact" dir="rtl">
+  <!-- Ambient background decorations -->
+  <div class="contact-bg-glow contact-bg-glow--lagoon" aria-hidden="true"></div>
+  <div class="contact-bg-glow contact-bg-glow--coral" aria-hidden="true"></div>
+
+  <div class="contact-container">
+    <!-- START column: persuasive closing content -->
+    <div class="contact-content-col">
+      <div class="contact-accent-line" aria-hidden="true"></div>
+      <h2 class="contact-heading">מוכנים להתחיל את המסע?</h2>
+      <p class="contact-lead">השתלת שיער בתאילנד היא לא רק פתרון רפואי — היא חוויה שמשנה חיים. אנחנו כאן כדי ללוות אתכם בכל שלב: מהייעוץ הראשוני ועד לחזרה הביתה עם שיער חדש וזיכרונות בלתי נשכחים מתאילנד.</p>
+
+      <ul class="contact-steps-list">
+        <li class="contact-step-item">
+          <span class="contact-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          </span>
+          <div class="contact-step-text">
+            <strong>תגובה תוך 24 שעות</strong>
+            <span>נציג אישי יחזור אליכם עם מידע מותאם</span>
+          </div>
+        </li>
+        <li class="contact-step-item">
+          <span class="contact-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </span>
+          <div class="contact-step-text">
+            <strong>ייעוץ אישי ללא עלות</strong>
+            <span>נבין את הצרכים שלכם ונבנה תוכנית מותאמת</span>
+          </div>
+        </li>
+        <li class="contact-step-item">
+          <span class="contact-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          </span>
+          <div class="contact-step-text">
+            <strong>תכנון הטיול והטיפול</strong>
+            <span>נסדר הכל — טיסות, מלון, קליניקה וחוויות תיירות</span>
+          </div>
+        </li>
+        <li class="contact-step-item">
+          <span class="contact-step-icon" aria-hidden="true">
+            <svg data-element-type="icon" data-icon-type="svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </span>
+          <div class="contact-step-text">
+            <strong>ליווי מלא בתאילנד ואחריו</strong>
+            <span>תמיכה לאורך כל הדרך, גם לאחר החזרה ארצה</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="contact-cta-block">
+        <a href="#contact-form" class="contact-btn-primary">קבלו ייעוץ חינמי עכשיו</a>
+        <div class="contact-direct-line">
+          <span class="contact-direct-label">או דברו איתנו ישירות:</span>
+          <a href="tel:[business_phone]" class="contact-phone-link">
+            <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            [business_phone]
+          </a>
+          <a href="https://wa.me/[whatsapp_handle]" target="_blank" rel="noopener noreferrer" class="contact-whatsapp-link">
+            <svg data-element-type="icon" data-icon-type="svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
+            וואטסאפ
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- END column: contact form -->
+    <div class="contact-form-col" id="contact-form">
+      <div class="contact-form-card">
+        <!-- Subtle ambient glow behind card -->
+        <div class="contact-form-glow" aria-hidden="true"></div>
+
+        <div class="contact-form-header">
+          <p class="contact-form-trust">כל פנייה מטופלת באופן אישי ודיסקרטי. אנחנו לא מוכרים — אנחנו מלווים.</p>
+        </div>
+
+        <form class="contact-form" novalidate="">
+          <div class="contact-form-group">
+            <label class="contact-form-label" for="contact-name">שם מלא</label>
+            <input class="contact-form-input" type="text" id="contact-name" name="name" placeholder="ישראל ישראלי" required="">
+          </div>
+          <div class="contact-form-group">
+            <label class="contact-form-label" for="contact-email">כתובת אימייל</label>
+            <input class="contact-form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required="">
+          </div>
+          <div class="contact-form-group">
+            <label class="contact-form-label" for="contact-phone">טלפון</label>
+            <input class="contact-form-input" type="tel" id="contact-phone" name="phone" placeholder="050-0000000">
+          </div>
+          <div class="contact-form-group">
+            <label class="contact-form-label" for="contact-message">ספרו לנו על עצמכם</label>
+            <textarea class="contact-form-input contact-form-textarea" id="contact-message" name="message" rows="4" placeholder="מה מעניין אתכם לדעת? כמה זמן נושרים? יש שאלות על הטיול?"></textarea>
+          </div>
+
+          <div class="privacy-consent">
+            <label class="privacy-consent-label">
+              <input type="checkbox" name="privacy_consent" class="privacy-consent-checkbox" required="">
+              <span>קראתי ואני מסכים/ה ל<a href="/terms" target="_blank">תנאי השימוש</a> ול<a href="/privacy" target="_blank">מדיניות הפרטיות</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="contact-submit-btn">שלחו פנייה — נחזור אליכם תוך 24 שעות</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  
+  <footer class="site-footer" dir="rtl">
+  <div class="footer-main">
+    <div class="footer-container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Company Info -->
+        <div class="footer-col footer-col--brand">
+          <div class="footer-logo-wrap">
+            <img src="/assets/thai-hair-go-logo.webp" alt="Thai Hair Go" class="logo">
+          </div>
+          <p class="footer-tagline">חוויית השתלת שיער פרמיום בתאילנד — שם רפואה מתקדמת פוגשת יעד חלומי.</p>
+          <div class="footer-social">
+            <a href="[facebook_handle]" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="[instagram_handle]" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="[whatsapp_handle]" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading">
+            <span class="footer-heading-line"></span>
+            ניווט מהיר
+          </h3>
+          <ul class="footer-links">
+            <li><a href="#features"><i class="fas fa-chevron-left footer-link-icon"></i>יתרונות הטיפול</a></li>
+            <li><a href="#process"><i class="fas fa-chevron-left footer-link-icon"></i>תהליך הטיפול</a></li>
+            <li><a href="#benefits"><i class="fas fa-chevron-left footer-link-icon"></i>למה אנחנו</a></li>
+            <li><a href="#testimonials"><i class="fas fa-chevron-left footer-link-icon"></i>המלצות לקוחות</a></li>
+            <li><a href="#stats"><i class="fas fa-chevron-left footer-link-icon"></i>נתונים ועובדות</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="footer-col">
+          <h3 class="footer-heading">
+            <span class="footer-heading-line"></span>
+            צור קשר
+          </h3>
+          <ul class="footer-contact">
+            <li>
+              <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+              <span class="contact-text"><a href="mailto:[business_email]">[business_email]</a></span>
+            </li>
+            <li>
+              <span class="contact-icon"><i class="fas fa-phone"></i></span>
+              <span class="contact-text"><a href="tel:[business_phone]">[business_phone]</a></span>
+            </li>
+            <li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+              <span class="contact-text">[business_address]</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Trust / CTA -->
+        <div class="footer-col footer-col--trust">
+          <h3 class="footer-heading">
+            <span class="footer-heading-line"></span>
+            מוכנים להתחיל?
+          </h3>
+          <p class="footer-trust-text">קבלו ייעוץ ראשוני חינם עם מומחי השתלת שיער שלנו בתאילנד.</p>
+          <a href="[whatsapp_handle]" class="footer-cta-btn">
+            <i class="fab fa-whatsapp"></i>
+            שלחו הודעה עכשיו
+          </a>
+          <div class="footer-badges">
+            <span class="footer-badge"><i class="fas fa-shield-alt"></i> מוסמך רפואית</span>
+            <span class="footer-badge"><i class="fas fa-star"></i> +500 מטופלים מרוצים</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="footer-divider-wrap">
+    <div class="footer-container">
+      <div class="footer-divider"></div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-bottom-inner">
+        <p class="footer-copyright">© 2026 Thai Hair Go. כל הזכויות שמורות.</p>
+        <div class="footer-legal">
+          <a href="/privacy">מדיניות פרטיות</a>
+          <span class="footer-legal-sep">·</span>
+          <a href="/terms">תנאי שימוש</a>
+          <span class="footer-legal-sep">·</span>
+          <a href="/accessibility">נגישות</a>
+          <span class="footer-legal-sep">·</span>
+          <a href="https://zappy5.com" target="_blank" class="zappy-attribution">נוצר באמצעות Zappy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <a href="https://wa.me/[whatsapp_handle]" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+      // Re-initialize when mobile menu becomes visible (MutationObserver)
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes') {
+            var target = mutation.target;
+            if (target.classList && (target.classList.contains('active') || target.classList.contains('open'))) {
+              setTimeout(initMobileSubmenuToggles, 100);
+            }
+          }
+        });
+      });
+      setTimeout(function() {
+        document.querySelectorAll('.mobile-menu, .nav-menu, #navMenu, nav').forEach(function(menu) {
+          observer.observe(menu, { attributes: true, attributeFilter: ['class', 'style'] });
+        });
+      }, 500);
+    })();
+    </script>
+
+    <script id="zappy-navbar-scroll-effect">
+    (function(){
+      var nb=document.querySelector('nav.navbar,.navbar:not(.zappy-catalog-menu)');
+      var cm=document.querySelector('.zappy-catalog-menu,#zappy-catalog-menu');
+      if(!nb)return;
+      var fb='rgba(246,244,239,0.85)';
+      var th=60;
+      var rs=getComputedStyle(document.documentElement);
+      var td=rs.getPropertyValue('--text-dark').trim()||'#1a1a1a';
+      var tl=rs.getPropertyValue('--text-light').trim()||'#ffffff';
+      var st=true?td:tl;
+      nb.style.transition='background 0.3s ease,backdrop-filter 0.3s ease,-webkit-backdrop-filter 0.3s ease,box-shadow 0.3s ease';
+      if(cm)cm.style.transition='background 0.3s ease,backdrop-filter 0.3s ease,-webkit-backdrop-filter 0.3s ease';
+      var neSel='a,.navbar-brand,.navbar-brand a,.dropdown-toggle,.mobile-toggle,.phone-header-btn,.mobile-hamburger-btn,.mobile-close-btn,.mobile-submenu-toggle,.nav-link';
+      var skipCls=['cart-link','login-link','nav-search-toggle','search-toggle'];
+      function sTC(c,clr){var els=c.querySelectorAll(neSel);for(var i=0;i<els.length;i++){var sk=false;if(els[i].closest('.sub-menu')||els[i].closest('.dropdown-menu')){sk=true;}for(var j=0;j<skipCls.length;j++){if(els[i].classList.contains(skipCls[j])){sk=true;break;}}if(!sk)els[i].style.setProperty('color',clr,'important');}}
+      function cTC(c){var els=c.querySelectorAll(neSel);for(var i=0;i<els.length;i++){if(els[i].closest('.sub-menu')||els[i].closest('.dropdown-menu'))continue;els[i].style.removeProperty('color');}}
+      function applyScrolled(){
+        nb.classList.add('scrolled');
+        if(window.innerWidth>768){
+          nb.style.setProperty('--frosted-text',st);
+          nb.style.setProperty('background-image','none','important');
+          nb.style.setProperty('background-color',fb,'important');
+          nb.style.backdropFilter='blur(12px)';nb.style.webkitBackdropFilter='blur(12px)';nb.style.boxShadow='0 2px 16px rgba(0,0,0,0.12)';
+          sTC(nb,st);
+        }
+        if(cm){cm.classList.add('scrolled');if(window.innerWidth>768){cm.style.setProperty('background',fb,'important');cm.style.setProperty('backdrop-filter','blur(12px)','important');cm.style.setProperty('-webkit-backdrop-filter','blur(12px)','important');sTC(cm,st);}}
+      }
+      function onS(){
+        if(window._zappyNavNoDarkHero) return;
+        if(window.innerWidth<=768){nb.classList.remove('scrolled');cTC(nb);if(cm){cm.classList.remove('scrolled');cTC(cm);}return;}
+        var y=window.scrollY||window.pageYOffset;
+        if(y>th){
+          nb.classList.add('scrolled');nb.style.setProperty('background-color',fb,'important');nb.style.setProperty('background-image','none','important');
+          nb.style.setProperty('--frosted-text',st);nb.style.backdropFilter='blur(12px)';nb.style.webkitBackdropFilter='blur(12px)';nb.style.boxShadow='0 2px 16px rgba(0,0,0,0.12)';
+          sTC(nb,st);
+          if(cm){cm.classList.add('scrolled');cm.style.setProperty('background',fb,'important');cm.style.setProperty('backdrop-filter','blur(12px)','important');cm.style.setProperty('-webkit-backdrop-filter','blur(12px)','important');sTC(cm,st);}
+        }else{
+          nb.classList.remove('scrolled');nb.style.setProperty('background-color','transparent','important');nb.style.removeProperty('background-image');
+          nb.style.removeProperty('--frosted-text');nb.style.backdropFilter='none';nb.style.webkitBackdropFilter='none';nb.style.boxShadow='none';
+          cTC(nb);
+          if(cm){cm.classList.remove('scrolled');cm.style.setProperty('background','transparent','important');cm.style.setProperty('backdrop-filter','none','important');cm.style.setProperty('-webkit-backdrop-filter','none','important');cTC(cm);}
+        }
+      }
+      function sLum(rv,gv,bv){rv/=255;gv/=255;bv/=255;rv=rv<=0.03928?rv/12.92:Math.pow((rv+0.055)/1.055,2.4);gv=gv<=0.03928?gv/12.92:Math.pow((gv+0.055)/1.055,2.4);bv=bv<=0.03928?bv/12.92:Math.pow((bv+0.055)/1.055,2.4);return 0.2126*rv+0.7152*gv+0.0722*bv;}
+      window.addEventListener('scroll',onS,{passive:true});
+      window.addEventListener('resize',onS,{passive:true});
+      onS();
+      var heroEl=document.querySelector('section[class*="hero"],[data-hero-type],main>section:first-child');
+      var hasDH=false;
+      if(heroEl){var hCs=getComputedStyle(heroEl);var hBI=hCs.backgroundImage;if(hBI&&hBI!=='none'){if(hBI.indexOf('url(')!==-1){var hM2=hCs.backgroundColor.match(/\d+/g);if(hM2&&hM2.length>=3){hasDH=sLum(parseInt(hM2[0]),parseInt(hM2[1]),parseInt(hM2[2]))<0.4;}else{hasDH=true;}}else if(hBI.indexOf('gradient')!==-1){var cM=hBI.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/g);if(cM&&cM.length>0){var tLm=0;for(var ci=0;ci<cM.length;ci++){var pts=cM[ci].match(/\d+/g);tLm+=sLum(parseInt(pts[0]),parseInt(pts[1]),parseInt(pts[2]));}hasDH=(tLm/cM.length)<0.4;}else{hasDH=true;}}else{hasDH=true;}}else{var hM=hCs.backgroundColor.match(/\d+/g);if(hM&&hM.length>=3){hasDH=sLum(parseInt(hM[0]),parseInt(hM[1]),parseInt(hM[2]))<0.4;}}}
+      if(!hasDH){window.removeEventListener('scroll',onS);window.removeEventListener('resize',onS);applyScrolled();window._zappyNavNoDarkHero=true;}
+    })();
+    </script>
+</body>
+</html>

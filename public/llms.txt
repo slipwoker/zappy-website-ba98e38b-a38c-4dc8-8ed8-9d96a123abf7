@@ -1,0 +1,64 @@
+# Thai Hair Go — Generative Engine Optimization Map
+
+> Thai Hair Go is a unique medical tourism company that combines professional hair transplant procedures in Thailand with a luxurious vacation experience. The brand bridges the gap between medical treatment and travel, offering clients the opportunity to undergo hair restoration while enjoying the beauty and hospitality of Thailand. The concept is built on the dual promise of transformation — both physical (renewed hair) and experiential (an unforgettable trip).
+
+---
+
+## Pages
+
+### בית
+https://example.com
+Thai Hair Go is a unique medical tourism company that combines professional hair transplant procedures in Thailand with a luxurious vacation experience. The bra
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+## How to Contact Us
+
+- (No contact details configured yet.)
+
+### Contact form
+- URL: https://example.com
+- Endpoint: https://example.com/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text, required)
+  - `email` (email, required)
+  - `phone` (tel)
+  - `message` (textarea)
+  - `privacy_consent` (checkbox, required)
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Thai Hair Go
+Thai Hair Go is a unique medical tourism company that combines professional hair transplant procedures in Thailand with a luxurious vacation experience. The brand bridges the gap between medical treatment and travel, offering clients the opportunity to undergo hair restoration while enjoying the beauty and hospitality of Thailand. The concept is built on the dual promise of transformation — both physical (renewed hair) and experiential (an unforgettable trip).
+
+## Target Audience
+- אנשים הסובלים מנשירת שיער המעוניינים בהשתלת שיער בחו"ל תוך שילוב חופשה
+
+## Industry
+רפואה אסתטית / תיירות רפואית
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://example.com/sitemap.xml
+- Robots: https://example.com/robots.txt
+- Flattened page text (for LLMs): https://example.com/llms-full.txt
