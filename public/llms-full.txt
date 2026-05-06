@@ -301,9 +301,7 @@ Thai Hair Go הופכת פרוצדורה רפואית מלחיצה לשדרוג 
 
 
 
-התחל את המסע שלך
-
-
+⁸8התחל את המסע שלך
 
 
 
@@ -657,7 +655,7 @@ Thai Hair Go הופכת פרוצדורה רפואית מלחיצה לשדרוג 
 או דברו איתנו ישירות:
 
 
-[business_phone]
++972542433084
 
 
 
@@ -757,11 +755,11 @@ Thai Hair Go הופכת פרוצדורה רפואית מלחיצה לשדרוג 
 ### צור קשר
 
 
-- [business_email]
+- thaihairwhy@gmail.com
 
-- [business_phone]
+- +972542433084
 
-- [business_address]
+- מעיין 17, ראש העין, שרון, 4853312, ישראל
 
 
 
@@ -974,11 +972,11 @@ Thai Hair Go ("החברה", "אנו", "שלנו") מחויבת להגן על פ�
 
 - חברה: Thai Hair Go
 
-- אימייל: [business_email]
+- אימייל: thaihairwhy@gmail.com
 
-- טלפון: [business_phone]
+- טלפון: +972542433084
 
-- כתובת: [business_address]
+- כתובת: מעיין 17, ראש העין, שרון, 4853312, ישראל
 
 
 
@@ -1036,11 +1034,11 @@ Thai Hair Go ("החברה", "אנו", "שלנו") מחויבת להגן על פ�
 ### צור קשר
 
 
-- [business_email]
+- thaihairwhy@gmail.com
 
-- [business_phone]
+- +972542433084
 
-- [business_address]
+- מעיין 17, ראש העין, שרון, 4853312, ישראל
 
 
 
@@ -1261,9 +1259,9 @@ Thai Hair Go מחויבת להנגיש את השירותים לכלל הציבו
 
 - חברה: Thai Hair Go
 
-- אימייל: [business_email]
+- אימייל: thaihairwhy@gmail.com
 
-- טלפון: [business_phone]
+- טלפון: +972542433084
 
 
 
@@ -1324,11 +1322,11 @@ Thai Hair Go מחויבת להנגיש את השירותים לכלל הציבו
 ### צור קשר
 
 
-- [business_email]
+- thaihairwhy@gmail.com
 
-- [business_phone]
+- +972542433084
 
-- [business_address]
+- מעיין 17, ראש העין, שרון, 4853312, ישראל
 
 
 
@@ -1572,11 +1570,11 @@ Thai Hair Go מספקת רפואה אסתטית / תיירות רפואית דר
 
 - חברה: Thai Hair Go
 
-- אימייל: [business_email]
+- אימייל: thaihairwhy@gmail.com
 
-- טלפון: [business_phone]
+- טלפון: +972542433084
 
-- כתובת: [business_address]
+- כתובת: מעיין 17, ראש העין, שרון, 4853312, ישראל
 
 
 
@@ -1631,11 +1629,11 @@ Thai Hair Go מספקת רפואה אסתטית / תיירות רפואית דר
 ### צור קשר
 
 
-- [business_email]
+- thaihairwhy@gmail.com
 
-- [business_phone]
+- +972542433084
 
-- [business_address]
+- מעיין 17, ראש העין, שרון, 4853312, ישראל
 
 
 
